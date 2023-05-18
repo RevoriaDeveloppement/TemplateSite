@@ -1,0 +1,105 @@
+/* NavBar */
+nav{
+    max-width: 448px;
+    margin: 0 auto;
+}
+.navigation{
+    position: fixed;
+    bottom: 0;
+    width: 450px;
+    height: 80px;
+    background: #1d1e31;
+    display: flex;
+    justify-content: center;
+    border-radius: 25px;
+    z-index: 100;
+}
+.navigation ul{
+    position: relative;
+    display: flex;
+    width: 400px;
+}
+.navigation ul li{
+    position: relative;
+    list-style: none;
+    width: 80px;
+    height: 80px;
+    
+}
+.navigation ul li a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+}
+.navigation ul li a .icon{
+    position: relative;
+    display: block;
+    line-height: 85px;
+    font-size: 1.5em;
+    transition: 0.5s;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.navigation ul li a:hover .icon{
+    color: rgba(255, 255, 255, 1);
+}
+
+.navigation ul li.active a .icon{
+    color: #c80064;
+    transform: translateY(-8px);
+}
+
+.navigation ul li a .text{
+    position: absolute;
+    font-weight: 600;
+    font-size: 0.6em;
+    color: var(--color-p);
+    text-transform: uppercase;
+    transform: translateY(0px);
+    letter-spacing: 0.05em;
+    opacity: 0;
+    z-index: 10;
+}
+
+.navigation ul li.active a .text{
+    opacity: 1;
+    transform: translateY(16px);
+}
+.indicator{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.indicator::before{
+    content: '';
+    position: absolute;
+    bottom: 14px;
+    width: 16px;
+    background: #29fd53;
+    border-radius: 10px;
+}
+
+.navigation ul li:nth-child(2).active ~ .indicator{
+    transform: translateX(calc(80px *1));
+}
+.navigation ul li:nth-child(3).active ~ .indicator{
+    transform: translateX(calc(80px *2));
+}
+.navigation ul li:nth-child(4).active ~ .indicator{
+    transform: translateX(calc(80px *3));
+}
+.navigation ul li:nth-child(5).active ~ .indicator{
+    transform: translateX(calc(80px *4));
+}
+/* Fin NavBar */
